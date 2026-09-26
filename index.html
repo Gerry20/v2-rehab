@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2 Rehab — Physiotherapy & Sports Rehabilitation in Vellore</title>
+<meta name="description" content="V2 Rehab is Vignesh's physiotherapy practice in Vellore — sports injury, post-surgical, neuro and general musculoskeletal rehab, at the clinic or at home.">
+<meta name="theme-color" content="#0B0B0C">
+
+<link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+<link rel="apple-touch-icon" href="img/logo-mark.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@600;700;800&family=Noto+Sans+Tamil:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="V2 Rehab — Physiotherapy in Vellore">
+<meta property="og:description" content="Sports injury, post-surgical, neuro and general MSK physiotherapy — at the clinic or at home. Book with Vignesh, V2 Rehab.">
+<meta property="og:image" content="img/logo-mark.svg">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================================================ HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a href="#top" class="logo" aria-label="V2 Rehab home">
+      <img src="img/logo-mark.svg" alt="" width="46" height="46">
+      <span class="logo__text">
+        <span class="logo__name">V<em>2</em> REHAB</span>
+        <span class="logo__sub">PT VIGNESH</span>
+      </span>
+    </a>
+
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#where" data-i18n="nav.where">Clinic &amp; Home Visits</a>
+      <a href="#conditions" data-i18n="nav.conditions">Conditions</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="hdr__act">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="langEn" aria-pressed="true">EN</button>
+        <button type="button" id="langTa" aria-pressed="false">தமிழ்</button>
+      </div>
+      <a class="btn btn--primary btn--sm" data-cfg-href="tel" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-i18n="nav.call">Call Now</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#services" data-i18n="nav.services">Services</a>
+  <a href="#where" data-i18n="nav.where">Clinic &amp; Home Visits</a>
+  <a href="#conditions" data-i18n="nav.conditions">Conditions</a>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <div class="mnav__cta">
+    <a class="btn btn--wa btn--block" id="mnavWa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02s-.51.07-.78.37c-.26.29-1.02 1-1.02 2.42s1.05 2.8 1.2 3c.14.2 2.07 3.17 5.03 4.44.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.08L2 22l5.05-1.32A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.7 0-3.28-.47-4.63-1.28l-.33-.2-3 .78.8-2.93-.21-.3A8.18 8.18 0 0 1 3.82 12c0-4.53 3.68-8.2 8.2-8.2 4.51 0 8.18 3.67 8.18 8.2 0 4.52-3.67 8.2-8.18 8.2z"/></svg>
+      <span data-i18n="nav.whatsapp">WhatsApp</span>
+    </a>
+    <a class="btn btn--outline btn--block" data-cfg-href="tel" href="#" data-i18n="nav.call">Call Now</a>
+  </div>
+</nav>
+
+<!-- ============================================================ MAIN -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero__in">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Physiotherapy · Vellore</span>
+      <h1 data-i18n-html="hero.h1">Recover fully. Move like <span class="accent">yourself</span> again.</h1>
+      <p class="hero__sub" data-i18n="hero.sub">
+        V2 Rehab is Vignesh's physiotherapy practice — sports injury, post-surgical,
+        neuro and general musculoskeletal rehab, built around one goal: getting you back
+        to full, confident movement. At the clinic, or at your home.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--wa" id="heroWa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02s-.51.07-.78.37c-.26.29-1.02 1-1.02 2.42s1.05 2.8 1.2 3c.14.2 2.07 3.17 5.03 4.44.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.08L2 22l5.05-1.32A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.7 0-3.28-.47-4.63-1.28l-.33-.2-3 .78.8-2.93-.21-.3A8.18 8.18 0 0 1 3.82 12c0-4.53 3.68-8.2 8.2-8.2 4.51 0 8.18 3.67 8.18 8.2 0 4.52-3.67 8.2-8.18 8.2z"/></svg>
+          <span data-i18n="hero.ctaWa">Message on WhatsApp</span>
+        </a>
+        <a class="btn btn--ghost" data-cfg-href="tel" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-i18n-html="hero.ctaCall">Call <span data-cfg="phoneDisplay">+91 —</span></span>
+        </a>
+      </div>
+      <p class="hero__or" data-i18n-html="hero.or">or <a href="#contact">send an enquiry</a> and Vignesh will call you back</p>
+
+      <div class="chips">
+        <span class="chip-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 4v6"/></svg><span data-i18n="hero.chip1">Clinic in Vellore</span></span>
+        <span class="chip-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5.5 5 9.5 5 14 12 22 12 22s7-8 7-12.5C19 5.5 16 2 12 2z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i18n="hero.chip2">Home visits available</span></span>
+        <span class="chip-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span data-i18n="hero.chip3">Same-week appointments</span></span>
+        <span class="chip-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span data-i18n="hero.chip4">Sports &amp; post-surgical focus</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="wrap trust__grid">
+      <div class="trust__item">
+        <div class="trust__n"><span data-cfg="yearsExperience">—</span>+</div>
+        <div class="trust__l" data-i18n="trust.years">Years in clinical practice</div>
+      </div>
+      <div class="trust__item">
+        <div class="trust__n">4</div>
+        <div class="trust__l" data-i18n="trust.areas">Specialty focus areas</div>
+      </div>
+      <div class="trust__item">
+        <div class="trust__n">2</div>
+        <div class="trust__l" data-i18n="trust.modes">Ways to be treated — clinic or home</div>
+      </div>
+      <div class="trust__item" id="ratingBlock" hidden>
+        <div class="trust__n"><span data-cfg="googleRating">—</span>★</div>
+        <div class="trust__l" data-i18n-html="trust.rating">Google rating (<span data-cfg="googleReviewCount">0</span> reviews)</div>
+      </div>
+      <div class="trust__item" id="alumniBlock">
+        <div class="trust__n" style="font-size:1.1rem;line-height:1.3;color:var(--on-dark)" data-cfg="alumniOf">—</div>
+        <div class="trust__l" data-i18n="trust.alumni">Clinical training</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="sec-head sec-head--split rv">
+        <div>
+          <span class="eyebrow" data-i18n="services.eyebrow">What we treat</span>
+          <h2 class="h-sec" data-i18n="services.h2">Four specialties, one approach: get you moving properly again</h2>
+        </div>
+        <p class="lede" data-i18n="services.lede">Every plan starts with a proper assessment — not a generic exercise sheet. Vignesh builds the program around your body, your sport or job, and your actual goal.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h3 data-i18n="services.c1.h">Sports Injury &amp; Performance</h3>
+          <p data-i18n="services.c1.p">Return-to-play rehab, strength &amp; conditioning, taping and pre-season screening for athletes and weekend players alike.</p>
+          <ul class="card__list">
+            <li data-i18n="services.c1.l1">Ligament &amp; muscle injury rehab</li>
+            <li data-i18n="services.c1.l2">Return-to-sport progressions</li>
+            <li data-i18n="services.c1.l3">Strength &amp; mobility programming</li>
+          </ul>
+        </article>
+
+        <article class="card rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12a3 3 0 1 0 3 3V6a3 3 0 1 0-3-3z"/><path d="M6 9h4M18 3v18M15 21h6M15 3h6"/></svg></div>
+          <h3 data-i18n="services.c2.h">Ortho &amp; Post-Surgical Rehab</h3>
+          <p data-i18n="services.c2.p">Structured recovery after joint, ligament or spine surgery, and hands-on management of fractures and joint pain.</p>
+          <ul class="card__list">
+            <li data-i18n="services.c2.l1">Post-op knee, shoulder &amp; spine</li>
+            <li data-i18n="services.c2.l2">Fracture &amp; joint-replacement rehab</li>
+            <li data-i18n="services.c2.l3">Manual therapy</li>
+          </ul>
+        </article>
+
+        <article class="card rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a2.5 2.5 0 0 1 2.5 2.5v1a2.5 2.5 0 0 1 5 0V7a2.5 2.5 0 0 1 2 2.45c0 1.5-1 2.05-1 3.55 0 2-2 2-2 4a4 4 0 0 1-8 0c0-1.5-1.5-2.5-1.5-4.5S8 10 8 8V4.5A2.5 2.5 0 0 1 9.5 2z"/></svg></div>
+          <h3 data-i18n="services.c3.h">Neuro Rehabilitation</h3>
+          <p data-i18n="services.c3.p">Gait retraining and functional recovery work for stroke, and other neurological conditions affecting movement.</p>
+          <ul class="card__list">
+            <li data-i18n="services.c3.l1">Stroke &amp; neuro recovery</li>
+            <li data-i18n="services.c3.l2">Gait &amp; balance retraining</li>
+            <li data-i18n="services.c3.l3">Functional mobility training</li>
+          </ul>
+        </article>
+
+        <article class="card rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
+          <h3 data-i18n="services.c4.h">General Musculoskeletal Pain</h3>
+          <p data-i18n="services.c4.p">Back and neck pain, posture correction for desk workers, and everyday joint or muscle pain that's been ignored too long.</p>
+          <ul class="card__list">
+            <li data-i18n="services.c4.l1">Back &amp; neck pain</li>
+            <li data-i18n="services.c4.l2">Posture &amp; desk-job correction</li>
+            <li data-i18n="services.c4.l3">Chronic joint pain management</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE -->
+  <section class="section section--alt" id="where">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="where.eyebrow">How treatment happens</span>
+        <h2 class="h-sec" data-i18n="where.h2">Come to the clinic, or have Vignesh come to you</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="where rv">
+          <span class="where__tag" data-i18n="where.clinic.tag">At the Clinic</span>
+          <h3 data-i18n="where.clinic.h">V2 Rehab, <span data-cfg="clinicCity">Vellore</span></h3>
+          <p class="where__body" data-i18n="where.clinic.p">Full assessment space with proper equipment for manual therapy, exercise rehab and post-surgical programs — best for structured, multi-week recovery plans.</p>
+          <div class="where__meta">
+            <div class="where__fee" id="feeClinic" hidden><small data-i18n="where.perSession">Per session</small><span data-cfg="feeClinic">—</span></div>
+            <a class="btn btn--outline btn--sm" data-cfg-href="mapLink" href="#" target="_blank" rel="noopener" data-i18n="where.directions">Get directions</a>
+          </div>
+        </div>
+
+        <div class="where where--accent rv">
+          <span class="where__tag" data-i18n="where.home.tag">Home Visits</span>
+          <h3 data-i18n="where.home.h">Rehab at your home</h3>
+          <p class="where__body" data-i18n="where.home.p">For patients who can't travel comfortably — post-op in the first weeks, elderly patients, or anyone who recovers better in a familiar space.</p>
+          <div class="areas" id="areaChips"></div>
+          <div class="where__meta">
+            <div class="where__fee" id="feeHome" hidden><small data-i18n="where.perSession">Per session</small><span data-cfg="feeHome">—</span></div>
+            <a class="btn btn--wa btn--sm" id="whereWa" href="#" target="_blank" rel="noopener" data-i18n="where.askArea">Ask if your area is covered</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="process.eyebrow">What to expect</span>
+        <h2 class="h-sec" data-i18n="process.h2">From first message to full recovery</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv">
+          <div class="step__bar"></div>
+          <h3 data-i18n="process.s1.h">Reach out</h3>
+          <p data-i18n="process.s1.p">Message on WhatsApp, call, or fill the enquiry form with what's going on.</p>
+        </div>
+        <div class="step rv">
+          <div class="step__bar"></div>
+          <h3 data-i18n="process.s2.h">Assessment</h3>
+          <p data-i18n="process.s2.p">A thorough first session — history, movement testing, and a clear diagnosis of what's actually wrong.</p>
+        </div>
+        <div class="step rv">
+          <div class="step__bar"></div>
+          <h3 data-i18n="process.s3.h">A real plan</h3>
+          <p data-i18n="process.s3.p">A treatment plan with a timeline and milestones — not open-ended sessions with no end point.</p>
+        </div>
+        <div class="step rv">
+          <div class="step__bar"></div>
+          <h3 data-i18n="process.s4.h">Progress &amp; discharge</h3>
+          <p data-i18n="process.s4.p">Regular re-testing, a home program, and a plan to keep you out of the clinic once you're better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS -->
+  <section class="section" id="conditions">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="conditions.eyebrow">Conditions treated</span>
+        <h2 class="h-sec" data-i18n="conditions.h2">If it's on this list, it's worth a call</h2>
+      </div>
+      <div class="cond">
+        <div class="cond__g rv">
+          <h3 data-i18n="conditions.g1.h">Sports &amp; Muscle</h3>
+          <div class="cond__list">
+            <span data-i18n="conditions.g1.i1">ACL / ligament injuries</span>
+            <span data-i18n="conditions.g1.i2">Hamstring &amp; muscle strains</span>
+            <span data-i18n="conditions.g1.i3">Ankle sprains</span>
+            <span data-i18n="conditions.g1.i4">Tennis / golfer's elbow</span>
+            <span data-i18n="conditions.g1.i5">Rotator cuff injuries</span>
+          </div>
+        </div>
+        <div class="cond__g rv">
+          <h3 data-i18n="conditions.g2.h">Joints &amp; Post-Surgical</h3>
+          <div class="cond__list">
+            <span data-i18n="conditions.g2.i1">Post-op knee &amp; shoulder</span>
+            <span data-i18n="conditions.g2.i2">Joint replacement recovery</span>
+            <span data-i18n="conditions.g2.i3">Fracture rehabilitation</span>
+            <span data-i18n="conditions.g2.i4">Frozen shoulder</span>
+            <span data-i18n="conditions.g2.i5">Arthritis &amp; joint pain</span>
+          </div>
+        </div>
+        <div class="cond__g rv">
+          <h3 data-i18n="conditions.g3.h">Neurological</h3>
+          <div class="cond__list">
+            <span data-i18n="conditions.g3.i1">Stroke recovery</span>
+            <span data-i18n="conditions.g3.i2">Balance &amp; gait disorders</span>
+            <span data-i18n="conditions.g3.i3">Nerve-related weakness</span>
+          </div>
+        </div>
+        <div class="cond__g rv">
+          <h3 data-i18n="conditions.g4.h">Everyday Pain</h3>
+          <div class="cond__list">
+            <span data-i18n="conditions.g4.i1">Low back pain</span>
+            <span data-i18n="conditions.g4.i2">Neck pain &amp; stiffness</span>
+            <span data-i18n="conditions.g4.i3">Desk-job posture issues</span>
+            <span data-i18n="conditions.g4.i4">Sciatica</span>
+            <span data-i18n="conditions.g4.i5">Headaches from the neck</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--alt" id="about">
+    <div class="wrap about">
+      <div class="about__media rv">
+        <div class="about__photo">
+          <div class="about__ph">
+            <strong>Photo pending</strong>
+            <span data-i18n="about.photoNote">Swap this block for a real photo of Vignesh — img/vignesh.jpg</span>
+          </div>
+        </div>
+        <div class="about__badge">
+          <img src="img/logo-mark.svg" alt="">
+        </div>
+      </div>
+      <div class="rv">
+        <span class="eyebrow" data-i18n="about.eyebrow">About V2 Rehab</span>
+        <h2 data-i18n-html="about.h2">Hi, I'm <span data-cfg="therapistName">Vignesh</span>.</h2>
+        <p data-i18n="about.p1">I started V2 Rehab to do physiotherapy properly — a real assessment, a plan with a clear endpoint, and treatment that actually gets people back to their sport, their job, or just moving without pain.</p>
+        <p data-i18n-html="about.p2">I trained at <span class="ph" data-cfg="alumniOf">—</span><span class="ph"> (please confirm)</span> and have spent my career since working across sports rehab, post-surgical recovery and general musculoskeletal care.</p>
+        <ul class="creds">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg><span data-i18n-html="about.cred1">Qualification: <span class="ph" data-cfg="credentials">—</span> <em style="font-style:normal;color:var(--text-3)">(confirm before publishing)</em></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="regLine" data-i18n-html="about.reg">Registration: <span class="ph" data-cfg="regNumber">—</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n-html="about.years"><span data-cfg="yearsExperience">—</span> years in clinical practice</span></li>
+        </ul>
+        <div class="hero__cta" style="margin-top:30px">
+          <a class="btn btn--primary" href="#contact" data-i18n="about.cta">Book an assessment</a>
+          <a class="link-arrow" href="#" target="_blank" rel="noopener" id="aboutInsta">
+            <span data-i18n="about.follow">Follow the training log on Instagram</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Good to know</span>
+        <h2 class="h-sec" data-i18n="faq.h2">Frequently asked questions</h2>
+      </div>
+      <div class="faq rv">
+        <details open>
+          <summary data-i18n="faq.q1">Do I need a doctor's referral?</summary>
+          <div class="faq__a" data-i18n="faq.a1">No — you can book directly. If your condition needs imaging or a specialist opinion first, Vignesh will tell you at the assessment and point you the right way.</div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">How many sessions will I need?</summary>
+          <div class="faq__a" data-i18n="faq.a2">It depends entirely on the condition — you'll get a realistic estimate and a plan with milestones after the first assessment, not an open-ended commitment.</div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">What should I bring to the first session?</summary>
+          <div class="faq__a" data-i18n="faq.a3">Any scans, reports or discharge summaries you have, a list of current medications, and clothes you can move comfortably in.</div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">Do you treat children or elderly patients?</summary>
+          <div class="faq__a" data-i18n="faq.a4">Yes — general musculoskeletal and post-surgical rehab is offered across age groups. Mention age and condition when you reach out so the session can be planned properly.</div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q5">How far do home visits go?</summary>
+          <div class="faq__a" data-i18n-html="faq.a5">Coverage areas are listed in the <a href="#where" class="link-arrow" style="border-bottom:1px solid currentColor">Clinic &amp; Home Visits</a> section above — message on WhatsApp to confirm your locality.</div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q6">What are your fees?</summary>
+          <div class="faq__a" data-i18n-html="faq.a6">See the <a href="#where" class="link-arrow" style="border-bottom:1px solid currentColor">Clinic &amp; Home Visits</a> section, or ask directly on WhatsApp — happy to quote before you book anything.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--dark" id="contact">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+        <h2 class="h-sec" data-i18n="contact.h2">Tell me what's going on — I'll tell you how I can help</h2>
+      </div>
+
+      <div class="contact">
+        <form class="form rv" id="enquiryForm">
+          <div class="form__row">
+            <div class="field">
+              <label for="fName" data-i18n-html="form.name">Name <span class="req">*</span></label>
+              <input id="fName" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="fPhone" data-i18n-html="form.phone">Phone <span class="req">*</span></label>
+              <input id="fPhone" name="phone" type="tel" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="fReason" data-i18n="form.reason">What's the issue?</label>
+            <select id="fReason" name="reason">
+              <option data-i18n="form.opt1">Sports injury</option>
+              <option data-i18n="form.opt2">Post-surgical rehab</option>
+              <option data-i18n="form.opt3">Neuro rehab</option>
+              <option data-i18n="form.opt4">Back / neck / general pain</option>
+              <option data-i18n="form.opt5">Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fPref" data-i18n="form.pref">Preferred mode</label>
+            <select id="fPref" name="preference">
+              <option data-i18n="form.pref1">Clinic visit</option>
+              <option data-i18n="form.pref2">Home visit</option>
+              <option data-i18n="form.pref3">Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fMsg" data-i18n="form.msg">Message</label>
+            <textarea id="fMsg" name="message" placeholder="" data-i18n-ph="form.msgPh"></textarea>
+          </div>
+          <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
+          <button class="btn btn--primary btn--block" type="submit" data-i18n="form.submit">Send enquiry</button>
+          <p class="form__note" data-i18n="form.note">Prefer to skip the form? Message directly on WhatsApp — replies are usually faster.</p>
+        </form>
+
+        <div class="info rv">
+          <div class="info__card">
+            <h3 data-i18n="contact.phoneH">Phone &amp; WhatsApp</h3>
+            <a class="info__big" data-cfg-href="tel" data-cfg="phoneDisplay" href="#">—</a>
+          </div>
+          <div class="info__card">
+            <h3 data-i18n="contact.addrH">Clinic Address</h3>
+            <address id="addrBlock">
+              <span data-cfg="clinicLine1">—</span><br>
+              <span data-cfg="clinicLine2">—</span><br>
+              <span data-cfg="clinicCity">—</span>, <span data-cfg="clinicState">—</span> <span data-cfg="clinicPincode">—</span>
+            </address>
+          </div>
+          <div class="info__card">
+            <h3 data-i18n="contact.hoursH">Hours</h3>
+            <ul class="hours" id="hoursList"></ul>
+          </div>
+          <div class="info__card" id="mapCard" hidden>
+            <h3 data-i18n="contact.mapH">Map</h3>
+            <iframe class="map" id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="V2 Rehab location"></iframe>
+          </div>
+          <div class="info__card">
+            <h3 data-i18n="contact.followH">Follow</h3>
+            <div class="socials">
+              <a href="#" id="socialInsta" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+              <a href="#" id="socialLinkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.86c0-1.64-.03-3.75-2.28-3.75-2.29 0-2.64 1.79-2.64 3.63V23h-4V8z"/></svg></a>
+              <a href="#" id="socialWa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02s-.51.07-.78.37c-.26.29-1.02 1-1.02 2.42s1.05 2.8 1.2 3c.14.2 2.07 3.17 5.03 4.44.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.08L2 22l5.05-1.32A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.7 0-3.28-.47-4.63-1.28l-.33-.2-3 .78.8-2.93-.21-.3A8.18 8.18 0 0 1 3.82 12c0-4.53 3.68-8.2 8.2-8.2 4.51 0 8.18 3.67 8.18 8.2 0 4.52-3.67 8.2-8.18 8.2z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div>
+        <a href="#top" class="logo" aria-label="V2 Rehab home">
+          <img src="img/logo-mark.svg" alt="" width="40" height="40">
+          <span class="logo__text">
+            <span class="logo__name">V<em>2</em> REHAB</span>
+            <span class="logo__sub">PT VIGNESH</span>
+          </span>
+        </a>
+        <p class="ftr__blurb" data-i18n="footer.blurb">Physiotherapy and sports rehabilitation in Vellore — at the clinic, or at your home.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.linksH">Explore</h4>
+        <div class="ftr__links">
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#where" data-i18n="nav.where">Clinic &amp; Home Visits</a>
+          <a href="#conditions" data-i18n="nav.conditions">Conditions</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contactH">Contact</h4>
+        <div class="ftr__links">
+          <a data-cfg-href="tel" data-cfg="phoneDisplay" href="#">—</a>
+          <a data-cfg-href="mail" data-cfg="email" href="#">—</a>
+          <a data-cfg-href="mapLink" href="#" target="_blank" rel="noopener" data-i18n="footer.directions">Get directions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer" data-i18n="footer.disclaimer">
+      This website provides general information about V2 Rehab's physiotherapy services and does not
+      constitute medical advice. Always consult Vignesh or another qualified healthcare professional
+      about your specific condition before starting any treatment or exercise program.
+    </div>
+
+    <div class="ftr__bar">
+      <span>© <span id="year"></span> V2 Rehab. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="footer.made">Site built for Vignesh — V2 Rehab.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp (desktop) -->
+<a class="fab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02s-.51.07-.78.37c-.26.29-1.02 1-1.02 2.42s1.05 2.8 1.2 3c.14.2 2.07 3.17 5.03 4.44.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.08L2 22l5.05-1.32A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.7 0-3.28-.47-4.63-1.28l-.33-.2-3 .78.8-2.93-.21-.3A8.18 8.18 0 0 1 3.82 12c0-4.53 3.68-8.2 8.2-8.2 4.51 0 8.18 3.67 8.18 8.2 0 4.52-3.67 8.2-8.18 8.2z"/></svg>
+</a>
+
+<!-- Mobile sticky action bar -->
+<div class="mobar">
+  <a class="btn btn--wa" id="mobarWa" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02s-.51.07-.78.37c-.26.29-1.02 1-1.02 2.42s1.05 2.8 1.2 3c.14.2 2.07 3.17 5.03 4.44.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.7-.7 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.08L2 22l5.05-1.32A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.7 0-3.28-.47-4.63-1.28l-.33-.2-3 .78.8-2.93-.21-.3A8.18 8.18 0 0 1 3.82 12c0-4.53 3.68-8.2 8.2-8.2 4.51 0 8.18 3.67 8.18 8.2 0 4.52-3.67 8.2-8.18 8.2z"/></svg>
+    <span data-i18n="nav.whatsapp">WhatsApp</span>
+  </a>
+  <a class="btn btn--outline" data-cfg-href="tel" href="#" data-i18n="nav.call">Call Now</a>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
