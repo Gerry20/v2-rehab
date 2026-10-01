@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@600;700;800&family=Noto+Sans+Tamil:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/styles.css">
 
@@ -115,24 +115,24 @@
   <!-- TRUST BAR -->
   <div class="trust">
     <div class="wrap trust__grid">
-      <div class="trust__item">
+      <div class="trust__item rv" id="yearsBlock">
         <div class="trust__n"><span data-cfg="yearsExperience">—</span>+</div>
         <div class="trust__l" data-i18n="trust.years">Years in clinical practice</div>
       </div>
-      <div class="trust__item">
+      <div class="trust__item rv">
         <div class="trust__n">4</div>
         <div class="trust__l" data-i18n="trust.areas">Specialty focus areas</div>
       </div>
-      <div class="trust__item">
+      <div class="trust__item rv">
         <div class="trust__n">2</div>
         <div class="trust__l" data-i18n="trust.modes">Ways to be treated — clinic or home</div>
       </div>
-      <div class="trust__item" id="ratingBlock" hidden>
+      <div class="trust__item rv" id="ratingBlock" hidden>
         <div class="trust__n"><span data-cfg="googleRating">—</span>★</div>
         <div class="trust__l" data-i18n-html="trust.rating">Google rating (<span data-cfg="googleReviewCount">0</span> reviews)</div>
       </div>
-      <div class="trust__item" id="alumniBlock">
-        <div class="trust__n" style="font-size:1.1rem;line-height:1.3;color:var(--on-dark)" data-cfg="alumniOf">—</div>
+      <div class="trust__item rv" id="alumniBlock" hidden>
+        <div class="trust__n trust__n--sub" data-cfg="alumniOf">—</div>
         <div class="trust__l" data-i18n="trust.alumni">Clinical training</div>
       </div>
     </div>
@@ -317,10 +317,8 @@
     <div class="wrap about">
       <div class="about__media rv">
         <div class="about__photo">
-          <div class="about__ph">
-            <strong>Photo pending</strong>
-            <span data-i18n="about.photoNote">Swap this block for a real photo of Vignesh — img/vignesh.jpg</span>
-          </div>
+          <!-- TODO: swap in a real photo once available:
+               <img src="img/vignesh.jpg" alt="Vignesh, physiotherapist at V2 Rehab"> -->
         </div>
         <div class="about__badge">
           <img src="img/logo-mark.svg" alt="">
@@ -330,11 +328,12 @@
         <span class="eyebrow" data-i18n="about.eyebrow">About V2 Rehab</span>
         <h2 data-i18n-html="about.h2">Hi, I'm <span data-cfg="therapistName">Vignesh</span>.</h2>
         <p data-i18n="about.p1">I started V2 Rehab to do physiotherapy properly — a real assessment, a plan with a clear endpoint, and treatment that actually gets people back to their sport, their job, or just moving without pain.</p>
-        <p data-i18n-html="about.p2">I trained at <span class="ph" data-cfg="alumniOf">—</span><span class="ph"> (please confirm)</span> and have spent my career since working across sports rehab, post-surgical recovery and general musculoskeletal care.</p>
+        <p id="alumniLine" data-i18n-html="about.trained" hidden>I trained at <span class="ph" data-cfg="alumniOf">—</span>.</p>
+        <p data-i18n="about.p2">I've spent my career since working across sports rehab, post-surgical recovery and general musculoskeletal care.</p>
         <ul class="creds">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg><span data-i18n-html="about.cred1">Qualification: <span class="ph" data-cfg="credentials">—</span> <em style="font-style:normal;color:var(--text-3)">(confirm before publishing)</em></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="regLine" data-i18n-html="about.reg">Registration: <span class="ph" data-cfg="regNumber">—</span></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n-html="about.years"><span data-cfg="yearsExperience">—</span> years in clinical practice</span></li>
+          <li id="credQual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg><span data-i18n-html="about.cred1">Qualification: <span class="ph" data-cfg="credentials">—</span></span></li>
+          <li id="credReg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="regLine" data-i18n-html="about.reg">Registration: <span class="ph" data-cfg="regNumber">—</span></span></li>
+          <li id="credYears"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n-html="about.years"><span data-cfg="yearsExperience">—</span> years in clinical practice</span></li>
         </ul>
         <div class="hero__cta" style="margin-top:30px">
           <a class="btn btn--primary" href="#contact" data-i18n="about.cta">Book an assessment</a>
@@ -400,12 +399,13 @@
             </div>
             <div class="field">
               <label for="fPhone" data-i18n-html="form.phone">Phone <span class="req">*</span></label>
-              <input id="fPhone" name="phone" type="tel" required autocomplete="tel">
+              <input id="fPhone" name="phone" type="tel" inputmode="tel" required autocomplete="tel">
             </div>
           </div>
           <div class="field">
             <label for="fReason" data-i18n="form.reason">What's the issue?</label>
             <select id="fReason" name="reason">
+              <option value="" selected disabled data-i18n="form.reasonPh">Select the issue</option>
               <option data-i18n="form.opt1">Sports injury</option>
               <option data-i18n="form.opt2">Post-surgical rehab</option>
               <option data-i18n="form.opt3">Neuro rehab</option>
@@ -416,6 +416,7 @@
           <div class="field">
             <label for="fPref" data-i18n="form.pref">Preferred mode</label>
             <select id="fPref" name="preference">
+              <option value="" selected disabled data-i18n="form.prefPh">Select a mode</option>
               <option data-i18n="form.pref1">Clinic visit</option>
               <option data-i18n="form.pref2">Home visit</option>
               <option data-i18n="form.pref3">Not sure yet</option>

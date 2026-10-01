@@ -14,13 +14,17 @@ window.SITE = {
   // Full name exactly as it should appear in print and on Google:
   therapistFullName: "Vignesh",                    // TODO
   // e.g. "BPT, MPT (Sports)" — do not list a qualification he does not hold.
-  credentials:   "BPT",                            // TODO
+  // Left blank on purpose: the About section and trust strip now hide every
+  // credentials/years/alumni row until this is filled in, instead of
+  // showing a guessed value. Fill in and the matching row appears.
+  credentials:   "",                               // TODO
   // Tamil Nadu Physiotherapy Council registration number. Optional, but it is
   // the single strongest trust signal you can put on an Indian clinic site.
   regNumber:     "",                               // TODO (leave "" to hide)
-  yearsExperience: "5",                            // TODO
+  yearsExperience: "",                             // TODO
   // Seen on his Instagram bio as "#psg IMSR" — confirm before publishing.
-  alumniOf:      "PSG Institute of Medical Sciences & Research, Coimbatore", // TODO confirm
+  // (candidate reading: PSG Institute of Medical Sciences & Research, Coimbatore)
+  alumniOf:      "",                               // TODO confirm
 
   /* --- Contact ----------------------------------------------------------- */
   phone:         "+919787943193",

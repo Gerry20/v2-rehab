@@ -49,6 +49,9 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+/* Anchor jumps must clear the fixed header. */
+.section, #top { scroll-margin-top: 84px; }
+
 body {
   font-family: var(--body);
   font-size: 17px;
@@ -173,6 +176,18 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 }
 .hdr__in { display: flex; align-items: center; gap: 22px; min-height: 78px; padding-block: 14px; flex-wrap: wrap; }
 .hdr__nav { display: flex; gap: 26px; margin-left: auto; flex-wrap: nowrap; }
+
+/* Nav collapses to the burger well before it can wrap the header onto a
+   second row — 1100px covers English; Tamil collapses at every width
+   because its strings run longer (see html[lang="ta"] rules below). */
+@media (max-width: 1100px) {
+  .hdr__nav { display: none; }
+  .burger { display: block; margin-left: auto; }
+  .hdr__act { margin-left: auto; }
+}
+html[lang="ta"] .hdr__nav { display: none; }
+html[lang="ta"] .burger { display: block; }
+html[lang="ta"] .hdr__act { margin-left: auto; }
 .hdr__nav a {
   font-size: .95rem; font-weight: 500; color: var(--on-dark-2);
   position: relative; padding-block: 6px;
@@ -187,9 +202,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 .hdr__act { display: flex; align-items: center; gap: 12px; }
 
 /* Language toggle */
-.lang { display: flex; border: 1px solid rgba(255,255,255,.2); border-radius: 100px; overflow: hidden; }
+.lang { display: flex; border: 1px solid rgba(255,255,255,.32); border-radius: 100px; overflow: hidden; }
 .lang button {
-  background: none; border: 0; cursor: pointer; padding: 7px 14px;
+  background: none; border: 0; cursor: pointer; padding: 0 14px; min-height: 44px;
   font-family: var(--display); font-size: .82rem; font-weight: 700;
   color: var(--on-dark-2); transition: background .2s var(--ease), color .2s var(--ease);
 }
@@ -255,7 +270,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 }
 .hero__sub { font-size: clamp(1.05rem, 1.7vw, 1.22rem); color: var(--on-dark-2); max-width: 60ch; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; align-items: center; }
-.hero__or { font-size: .92rem; color: var(--text-3); }
+.hero__or { font-size: .92rem; color: var(--on-dark-2); }
 .hero__or a { color: var(--on-dark); border-bottom: 1px solid rgba(255,255,255,.3); }
 .hero__or a:hover { border-color: var(--red-bright); color: var(--red-bright); }
 
@@ -263,7 +278,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 .chip-i {
   display: inline-flex; align-items: center; gap: 9px;
   padding: 9px 17px 9px 13px; border-radius: 100px;
-  border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.32); background: rgba(255,255,255,.04);
   font-size: .89rem; color: var(--on-dark-2);
 }
 .chip-i svg { width: 16px; height: 16px; color: var(--red-bright); flex: none; }
@@ -271,15 +286,15 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 /* --- Trust bar ------------------------------------------------------------ */
 .trust { background: var(--ink-2); border-top: 1px solid var(--line-dark); color: var(--on-dark); }
 .trust__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 28px;
   padding-block: 40px;
 }
-.trust__item { padding-inline: 28px; border-left: 1px solid var(--line-dark); }
-.trust__item:first-child { padding-left: 0; border-left: 0; }
+.trust__item { padding-inline: 0; border-left: 0; }
 .trust__n {
   font-family: var(--display); font-size: 2rem; font-weight: 800;
   color: var(--red-bright); line-height: 1;
 }
+.trust__n--sub { font-size: 1.1rem; line-height: 1.3; color: var(--on-dark); }
 .trust__l { font-size: .9rem; color: var(--on-dark-2); margin-top: 8px; }
 
 /* --- Cards ---------------------------------------------------------------- */
@@ -341,13 +356,13 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 }
 .where__fee { font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
 .where__fee small { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 2px; }
+  text-transform: uppercase; color: var(--text-2); margin-bottom: 2px; }
 .where--accent .where__fee small { color: var(--on-dark-2); }
 
 .areas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .areas span {
   font-size: .84rem; padding: 6px 13px; border-radius: 100px;
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.32);
   color: var(--on-dark-2);
 }
 
@@ -385,14 +400,17 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 .about { display: grid; grid-template-columns: 400px 1fr; gap: 64px; align-items: start; }
 .about__media { position: relative; }
 .about__photo {
-  aspect-ratio: 4/5; border-radius: var(--r-lg); overflow: hidden;
-  background: linear-gradient(150deg, var(--ink-2), var(--ink));
+  aspect-ratio: 4/5; border-radius: var(--r-lg); overflow: hidden; position: relative;
+  background: radial-gradient(circle at 50% 30%, rgba(216,31,38,.12), transparent 70%),
+              linear-gradient(150deg, var(--ink-2), var(--ink));
   display: grid; place-items: center; text-align: center; padding: 28px;
   border: 1px solid var(--line-dark);
 }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; }
-.about__ph { color: var(--text-3); font-size: .86rem; line-height: 1.6; }
-.about__ph strong { display: block; color: var(--on-dark-2); font-family: var(--display); margin-bottom: 6px; }
+.about__photo::before {
+  content: "V2"; font-family: var(--display); font-weight: 800;
+  font-size: clamp(5rem, 14vw, 9rem); color: rgba(255,255,255,.05); line-height: 1;
+}
+.about__photo img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
 .about__badge { position: absolute; right: -26px; bottom: -26px; width: 116px; height: 116px; }
 .about__badge svg { width: 100%; height: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,.4)); }
 
@@ -430,21 +448,23 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 /* --- Contact -------------------------------------------------------------- */
 .contact { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
 
-.form { display: grid; gap: 18px; }
+.form { display: grid; gap: 18px; min-width: 0; }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.field { display: grid; gap: 7px; }
+.field { display: grid; gap: 7px; min-width: 0; }
 .field label { font-size: .84rem; font-weight: 600; color: var(--text-2); }
 .field label .req { color: var(--red); }
 .field input, .field select, .field textarea {
+  width: 100%; min-width: 0;
   padding: 13px 15px; border: 1px solid var(--line); border-radius: var(--r-sm);
-  background: var(--paper); font-size: .97rem;
+  background: var(--paper); color: var(--text); font-size: .97rem;
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
+.section--dark .field label { color: var(--on-dark-2); }
 .field textarea { resize: vertical; min-height: 110px; }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none; border-color: var(--red); box-shadow: 0 0 0 4px rgba(216,31,38,.12);
 }
-.form__note { font-size: .84rem; color: var(--text-3); }
+.form__note { font-size: .84rem; color: var(--on-dark-2); }
 .form__status { font-size: .94rem; font-weight: 600; padding: 12px 16px; border-radius: var(--r-sm); }
 .form__status[data-state="ok"]   { background: #E8F7EE; color: #10633A; }
 .form__status[data-state="err"]  { background: #FDECEC; color: #96131A; }
@@ -458,7 +478,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 1.1
 }
 .info__card h3 {
   font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 12px; font-weight: 700;
+  color: var(--text-2); margin-bottom: 12px; font-weight: 700;
 }
 .info__card p, .info__card address { font-style: normal; color: var(--text-2); font-size: .97rem; }
 .info__big {
@@ -530,8 +550,6 @@ html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3, html[lang="ta"] h4 {
 html[lang="ta"] .hero h1 { font-size: clamp(1.9rem, 4.6vw, 3.3rem); }
 html[lang="ta"] .h-sec  { font-size: clamp(1.6rem, 3.4vw, 2.3rem); max-width: 24ch; }
 html[lang="ta"] .eyebrow, html[lang="ta"] .where__tag { letter-spacing: .04em; }
-html[lang="ta"] .hdr__nav { gap: 16px; }
-html[lang="ta"] .hdr__nav a { font-size: .84rem; }
 html[lang="ta"] .logo__name { font-size: 1rem; }
 
 /* --- Responsive ----------------------------------------------------------- */
@@ -545,8 +563,8 @@ html[lang="ta"] .logo__name { font-size: 1rem; }
 }
 
 @media (max-width: 860px) {
-  .hdr__nav { display: none; }
-  .burger { display: block; margin-left: auto; }
+  .hdr__in { flex-wrap: nowrap; gap: 12px; }
+  .hdr .logo img { width: 40px; height: 40px; }
   .hdr__act .lang { order: -1; }
   .hdr__act .btn { display: none; }
   .hdr { background: rgba(11,11,12,.9); backdrop-filter: blur(14px); }
@@ -556,9 +574,6 @@ html[lang="ta"] .logo__name { font-size: 1rem; }
   .about { gap: 36px; }
   .about__media { max-width: 320px; }
   .about__badge { right: -14px; bottom: -14px; width: 92px; height: 92px; }
-  .trust__grid { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
-  .trust__item { padding-inline: 20px; }
-  .trust__item:nth-child(odd) { padding-left: 0; border-left: 0; }
   .cond { gap: 0; }
 }
 
@@ -568,6 +583,7 @@ html[lang="ta"] .logo__name { font-size: 1rem; }
   .hero { padding-block: 140px 80px; }
   .hero__cta { gap: 12px; }
   .hero__cta .btn { flex: 1 1 100%; }
+  .btn { white-space: normal; text-align: center; line-height: 1.3; }
   .grid-4, .steps { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .where { padding: 28px 22px; }

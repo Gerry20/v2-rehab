@@ -37,7 +37,7 @@
     root.querySelectorAll("[data-cfg]").forEach(function (el) {
       var key = el.getAttribute("data-cfg");
       var val = CFG_MAP[key];
-      if (val) el.textContent = val;
+      if (val) { el.textContent = val; el.classList.remove("ph"); }
     });
     root.querySelectorAll("[data-cfg-href]").forEach(function (el) {
       var key = el.getAttribute("data-cfg-href");
@@ -103,6 +103,25 @@
   function toggleRating() {
     var block = document.getElementById("ratingBlock");
     if (block) block.hidden = !(S.googleRating);
+  }
+
+  // Claims about Vignesh (credentials, years, alumni, rating) only ever show
+  // once they're real — never a build note or a guessed value. Logistics a
+  // patient needs to decide (fees, coverage, hours) get an "ask" prompt
+  // instead of being hidden outright; that's handled where they render.
+  function toggleCredentials() {
+    var rows = {
+      credQual: S.credentials,
+      credReg: S.regNumber,
+      credYears: S.yearsExperience,
+      yearsBlock: S.yearsExperience,
+      alumniLine: S.alumniOf,
+      alumniBlock: S.alumniOf
+    };
+    Object.keys(rows).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.hidden = !rows[id];
+    });
   }
 
   function setupMap() {
@@ -268,9 +287,7 @@
         "Preference: " + (payload.preference || "-"),
         "Message: " + (payload.message || "-")
       ];
-      setStatus("ok", currentLang() === "ta"
-        ? "படிவம் இன்னும் இணைக்கப்படவில்லை — WhatsApp திறக்கப்படுகிறது, அங்கே அனுப்பவும்."
-        : "The form isn't connected yet — opening WhatsApp so you can send this directly.");
+      setStatus("ok", (I18N[currentLang()] && I18N[currentLang()]["form.statusWa"]) || "Opening WhatsApp with your details…");
       window.open(waLink(lines.join("\n")), "_blank", "noopener");
     }
 
@@ -298,6 +315,7 @@
     buildAreas();
     toggleFees();
     toggleRating();
+    toggleCredentials();
     setupMap();
     initHeader();
     initForm();
