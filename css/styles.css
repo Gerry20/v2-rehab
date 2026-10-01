@@ -418,6 +418,7 @@ html[lang="ta"] .hdr__act { margin-left: auto; }
 .about p { color: var(--text-2); margin-bottom: 16px; }
 .creds { display: grid; gap: 12px; margin-top: 30px; }
 .creds li { display: flex; gap: 13px; align-items: flex-start; font-size: .97rem; }
+.creds li[hidden] { display: none; }
 .creds svg { width: 20px; height: 20px; color: var(--red); flex: none; margin-top: 3px; }
 
 .ph {
